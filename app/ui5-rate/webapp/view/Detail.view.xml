@@ -2,7 +2,9 @@
     controllerName="com.trm.cap.rates.ui5rate.controller.Detail"
     xmlns="sap.m"
     xmlns:semantic="sap.f.semantic"
-    xmlns:mvc="sap.ui.core.mvc">
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
 
     <semantic:SemanticPage
         id="detailPage"
@@ -18,7 +20,45 @@
             <ObjectAttribute title="Valid From" text="{VALID_FROM}"/>
         </semantic:headerContent>
         <semantic:content>
+        <f:SimpleForm id="SimpleFormDisplay354wideDual"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title="Address"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<core:Title text="Informacion de la tasa" />
+				<Label text="Rate type" />
+				<Text text="{RATE_TYPE}" />
 
+				<Label text="From Currency" />
+				<Text text="{FROM_CURR}" />
+				
+                <Label text="To currency" />
+				<Text text="{TO_CURRNCY}" />
+				
+                <core:Title text="Parametros" />
+				<Label text="Valido desde" />
+                <Text text="{VALID_FROM}" />
+
+				<Label text="From factor" />
+				<Text text="{FROM_FACTOR}" />
+
+                <Label text="To factor" />
+				<Text text="{TO_FACTOR}" />
+			</f:content>
+		</f:SimpleForm>
         </semantic:content>
         <!--Semantic ShareMenu Buttons-->
         <semantic:sendEmailAction>

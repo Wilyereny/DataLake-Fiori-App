@@ -8,6 +8,7 @@
   "dependencies": {
     "@sap/cds": "^6",
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "build": "^0.1.4",
     "dotenv": "^16.0.3",
     "express": "^4",
     "mongodb": "^5.1.0"
@@ -16,6 +17,11 @@
     "sqlite3": "^5.0.4"
   },
   "scripts": {
-    "start": "cds run"
+    "start": "cds run",
+    "build:mta": "mbt build",
+    "deploy:cf": "cross-var cf deploy mta_archives/products_$npm_package_version.mtar",
+    "deploy": "run-s build:mta deploy:cf",
+    "serve:uimodule": "ui5 serve --config=uimodule/ui5.yaml",
+    "build:uimodule": "ui5 build --config=uimodule/ui5.yaml --clean-dest --dest uimodule/dist --include-task=generateManifestBundle"
   }
 }
