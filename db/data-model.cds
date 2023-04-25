@@ -14,6 +14,6 @@ entity rate : managed {
         TO_CURRNCY  : String(10);
         VALID_FROM  : Date;
         EXCH_RATE   : Double;
-        FROM_FACTOR : Int32;
-        TO_FACTOR   : Int32;
+        FROM_FACTOR : Double;
+        TO_FACTOR   : Double;
 }

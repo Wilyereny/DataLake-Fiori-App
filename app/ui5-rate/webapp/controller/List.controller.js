@@ -224,7 +224,11 @@ sap.ui.define([
             // eslint-disable-next-line sap-no-history-manipulation
             history.go(-1);
         },
-
+        onNewRatePress: function(oEvent){
+            var bReplace = !Device.system.phone; 
+            this.getModel("appView").setProperty("/layout", "TwoColumnsMidExpanded"); 
+            this.getRouter().navTo("newRate", bReplace);
+        },
         /* =========================================================== */
         /* begin: internal methods                                     */
         /* =========================================================== */

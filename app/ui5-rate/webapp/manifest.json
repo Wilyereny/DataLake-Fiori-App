@@ -105,13 +105,28 @@
             "list",
             "object"
           ]
+        },
+        {
+          "pattern": "newRate",
+          "name": "newRate",
+          "target": [
+            "list",
+            "newRate"
+          ]
         }
+
       ],
       "targets": {
         "list": {
           "viewName": "List",
           "viewLevel": 1,
           "viewId": "list"
+        },
+        "newRate": {
+          "viewName": "NewRate",
+          "viewId": "NewRate",
+          "viewLevel": 1,
+          "controlAggregation": "midColumnPages"
         },
         "object": {
           "viewName": "Detail",

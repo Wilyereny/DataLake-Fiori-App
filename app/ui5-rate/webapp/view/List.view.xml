@@ -74,5 +74,11 @@
                 </items>
             </List>
         </semantic:content>
+
+        <semantic:addAction>
+            <semantic:AddAction press="onNewRatePress" />
+        </semantic:addAction>
+            
+
     </semantic:SemanticPage>
 </mvc:View>

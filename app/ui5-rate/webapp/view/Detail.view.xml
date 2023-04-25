@@ -41,22 +41,28 @@
 				<core:Title text="Informacion de la tasa" />
 				<Label text="Rate type" />
 				<Text text="{RATE_TYPE}" />
+                <Input value="{newRate>/RATE_TYPE}" />
 
 				<Label text="From Currency" />
 				<Text text="{FROM_CURR}" />
+                <Input value="{newRate>/FROM_CURR}" />
 				
                 <Label text="To currency" />
 				<Text text="{TO_CURRNCY}" />
-				
+                <Input value="{newRate>/TO_CURRNCY}" />
+
                 <core:Title text="Parametros" />
 				<Label text="Valido desde" />
                 <Text text="{VALID_FROM}" />
-
+                <Input value="{newRate>/VALID_FROM}" />
+                
 				<Label text="From factor" />
 				<Text text="{FROM_FACTOR}" />
+                <Input value="{newRate>/FROM_FACTOR}" />
 
                 <Label text="To factor" />
 				<Text text="{TO_FACTOR}" />
+                <Input value="{newRate>/TO_FACTOR}" />
 			</f:content>
 		</f:SimpleForm>
         </semantic:content>
@@ -85,6 +91,12 @@
                     visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/midColumn/fullScreen}}"
                     press=".toggleFullScreen"/>
         </semantic:exitFullScreenAction>
+
+        <semantic:footerCustomActions>
+            <Button text="Update" type="Accept" press="onUpdatePress" /> 
+            <Button text="Delete" type="Reject" press="onDeletePress" /> 
+        </semantic:footerCustomActions>
+
 
     </semantic:SemanticPage>
 

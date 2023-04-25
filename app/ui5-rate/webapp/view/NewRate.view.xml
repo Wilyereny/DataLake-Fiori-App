@@ -1,0 +1,77 @@
+<mvc:View
+    controllerName="com.trm.cap.rates.ui5rate.controller.NewRate"
+    xmlns="sap.m"
+    xmlns:semantic="sap.f.semantic" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:core="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc">
+
+    <semantic:SemanticPage 
+        id="newRatePage" 
+        busy="{detailView>/busy}"
+        busyIndicatorDelay="fcletailView>/delayl"
+        showFooter="true">
+
+        <semantic:titleHeading>
+            <Title
+                id="listPageTitle"
+                text="Nueva Tasa"
+                level="H2"/>
+        </semantic:titleHeading>
+        
+        <semantic:content>
+<f:SimpleForm id="SimpleFormToolbar"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanXL="4"
+            labelSpanL="3"
+            labelSpanM="4"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="0"
+            emptySpanL="4"
+            emptySpanM="0"
+            emptySpanS="0"
+            columnsXL="2"
+            columnsL="1"
+            columnsM="1"
+            singleContainerFullSize="false">
+            <f:content>
+                <core:Title text="Nuevos datos" />  
+                <Label text="Rate Type" />
+                <Input value="{newRate>/RATE_TYPE}" />
+
+                <Label text="Fecha de validez" />
+                <Input value="{newRate>/VALID_FROM}" />
+
+                <Label text="From Currency" />
+                <Input value="{newRate>/FROM_CURR}" />
+
+                <Label text="To currency" />
+                <Input value="{newRate>/TO_CURRNCY}" />
+
+                <Label text="Exchange Rate" />
+                <Input value="{newRate>/EXCH_RATE}" />
+
+                <Label text="From factor" />
+                <Input value="{newRate>/FROM_FACTOR}" />
+
+                <Label text="To factor" />
+                <Input value="{newRate>/TO_FACTOR}" />
+            </f:content>
+        </f:SimpleForm>
+        </semantic:content>
+
+        <semantic:closeAction>
+            <semantic:CloseAction
+                    id="closeColumn"
+                    press=".onCloseDetailPress"/> 
+        </semantic:closeAction>
+
+        <!-- Custom Footer Content-->
+        <semantic:footerCustomActions>
+            <Button text="Guardar" type="Emphasized" press="onSaveNewrate" /> 
+        </semantic:footerCustomActions>
+
+    </semantic:SemanticPage> 
+ </mvc:View>
